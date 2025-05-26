@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <script>
+if (username === correctUsername && password === correctPassword) {
+    localStorage.setItem('quizLoggedIn', 'true');
+    window.location.href = "index.html";
+}
+</script>
+    <h1>Mia's Quiz side</h1>
+    <div id="fasit-button-container"></div>
+    <h2>Allow popup window</h2>
+    <div class="score-container"></div>
+    <div class="score-display"></div>
+   <div id="quiz-container"></div>
+   
+    <button id="print-button" class="print-button">Skriv ut spørsmål</button>
+    
+</body>
+</html>

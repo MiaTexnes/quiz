@@ -1,0 +1,356 @@
+/* Generell styling for hele siden */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Overskrift */
+h1 {
+    text-align: center;
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Riktig svar */
+.correct-answer {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Feil svar */
+.wrong-answer {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+
+/* Quiz-container */
+#quiz-container {
+    display: flex;
+    flex-wrap: wrap; /* Tillat at elementer brytes til neste rad */
+    gap: 5px; /* Avstand mellom spørsmål */
+    justify-content: space-between; /* Fordel spørsmålene jevnt */
+}
+
+/* Spørsmål-container */
+.question-container {
+    flex: 0 1 calc(33.33% - 20px); /* Ta opp 1/3 av bredden minus gap */
+    box-sizing: border-box; /* Inkluder padding og border i bredden */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+}
+
+/* Spørsmål-tekst */
+.question-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Alternativer */
+.option {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.option input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.option label {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Knapp-styling */
+button {
+    background: #438f5a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 10px auto; /* Sentrer knappen horisontalt */
+    display: block; /* Gjør knappen til et blokk-element */
+    text-align: center; /* Sentrer innholdet i knappen */
+}
+
+button:hover {
+    background: #357ab8;
+}
+
+.button-wrapper {
+    text-align: center; /* Sentrer knappen */
+    margin-top: 10px; /* Legg til litt mellomrom over knappen */
+}
+
+.refresh-button:hover {
+    background: #357ab8;
+}
+
+/* Submit-knapp */
+.submit-button {
+    display: block;
+    margin: 20px auto;
+}
+
+/* Tilbakemelding for svar */
+.correct-answer {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.wrong-answer {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Score container styling */
+.score-container {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content (if needed) */
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center; /* Ensure text is centered */
+}
+/* Poengsum-visning */
+.score-display {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Fasit-container */
+#fasit-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Fasit-spørsmål */
+.fasit-question {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.fasit-question strong {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Fasit-svar */
+.fasit-answer {
+    font-size: 16px;
+    color: #4caf50;
+    margin-top: 5px;
+}
+
+/* Knapp-container for fasit */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* ...existing code... */
+
+/* Login page styling */
+.login-background {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4a90e2 0%, #c3cfe2 100%);
+}
+
+.login-form-container {
+    background: rgba(255,255,255,0.95);
+    padding: 40px 32px 32px 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+    max-width: 90vw;
+}
+
+.login-form-container h2 {
+    margin-bottom: 24px;
+    color: #4a90e2;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+#loginForm label {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 220px;
+    padding: 10px 12px;
+    border: 1px solid #b0c4de;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-top: 6px;
+    margin-bottom: 8px;
+    background: #f5f7fa;
+    transition: border 0.2s;
+}
+
+#loginForm input[type="text"]:focus,
+#loginForm input[type="password"]:focus {
+    border: 1.5px solid #4a90e2;
+    outline: none;
+    background: #eaf1fb;
+}
+
+#loginForm button[type="submit"] {
+    background: linear-gradient(90deg, #438f5a 60%, #4a90e2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px rgba(67,143,90,0.08);
+    transition: background 0.3s, transform 0.2s;
+}
+
+#loginForm button[type="submit"]:hover {
+    background: linear-gradient(90deg, #357ab8 60%, #438f5a 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
+#message {
+    margin-top: 18px;
+    color: #e74c3c;
+    font-weight: 600;
+    text-align: center;
+    min-height: 24px;
+    letter-spacing: 0.5px;
+}
+
+.fasit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 16px auto;      /* Endret fra 16px 0 til 16px auto for å sentrere */
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: block;         /* Sørger for at margin auto fungerer */
+    text-align: center;     /* Sentrer tekst i knappen */
+}
+.fasit-button:hover {
+    background-color: #388e3c;
+}
+
+/* Optimaliser utskrift */
+@media print {
+    /* Skjul unødvendige elementer */
+    #print-button, .submit-button, .refresh-button, .button-container {
+        display: none; /* Skjul knapper */
+    }
+
+    /* Generell styling for utskrift */
+    body {
+        font-family: Arial, sans-serif; /* Enkel og lesbar font */
+        font-size: 15px; /* Standard skriftstørrelse */
+        color: #000; /* Svart tekst */
+        margin: 0;
+        padding: 0;
+        line-height: 1; /* Standard linjeavstand */
+    }
+
+    #quiz-container {
+        width: 100%; /* Bruk hele bredden */
+        margin: 0;
+        padding: 0;
+    }
+
+    .question-container {
+        margin-bottom: 1px; /* Legg til litt mellomrom mellom spørsmål */
+        page-break-inside: avoid; /* Unngå sideskift midt i spørsmål */
+    }
+
+    .question-text {
+        font-size: 20px; /* Gjør spørsmålene tydelige */
+        font-weight: bold;
+        margin-bottom: 1px;
+    }
+
+    .option {
+        font-size: 12px; /* Standard skriftstørrelse for alternativer */
+        margin-left: 3px; /* Indenter alternativer for lesbarhet */
+    }
+
+        .option input[type="radio"] {
+            display: inline-block; /* Sørg for at radioknappene vises */
+            margin-right: 5px; /* Legg til mellomrom mellom knapp og tekst */
+            transform: scale(1); /* Standard størrelse for radioknapper */
+        }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Fjern sideskift for små elementer */
+    .score-display {
+        display: none; /* Skjul poengsum ved utskrift */
+    }
+}
+
+@media (max-width: 768px) {
+    .question-container {
+        flex: 0 1 100%; /* Ta opp hele bredden på små skjermer */
+    }
+}

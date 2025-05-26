@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-background">
+    <div class="login-form-container">
+        <h2>Logg inn til Quiz</h2>
+        <form id="loginForm">
+            <label>Username:<br>
+                <input type="text" id="username" autocomplete="username">
+            </label>
+            <label>Password:<br>
+                <input type="password" id="password" autocomplete="current-password">
+            </label>
+            <button type="submit">Login</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+    const correctUsername = "2222";
+    const correctPassword = "1111";
+    document.getElementById('loginForm').onsubmit = function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        if (username === correctUsername && password === correctPassword) {
+            localStorage.setItem('quizLoggedIn', 'true');
+            window.location.href = "quiz.html";
+        } else {
+            document.getElementById('message').textContent = "Incorrect username or password.";
+        }
+    };
+</script>
+</body>
+</html>
