@@ -546,7 +546,7 @@ const questions = [
         correctAnswer: "Kristofer Hivju"
     },
     {
-        question: "Hvilken norsk komiker har karakteren 'Asbjørn Brekke'?",
+        question: "Hvilken norsk komiker har karakteren 'Asbjørn Breke'?",
         options: ["Herman Flesvig", "Harald Eia", "Odd-Magnus Williamson", "Atle Antonsen"],
         correctAnswer: "Herman Flesvig"
     },
