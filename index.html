@@ -1,37 +1,45 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="login-background">
-    <div class="login-form-container">
-        <h2>Logg inn til Quiz</h2>
-        <form id="loginForm">
-            <label>Username:<br>
-                <input type="text" id="username" autocomplete="username">
-            </label>
-            <label>Password:<br>
-                <input type="password" id="password" autocomplete="current-password">
-            </label>
-            <button type="submit">Login</button>
-        </form>
-        <p id="message"></p>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="index.js"></script>
+  </head>
+  <body>
+    <h1>Quiz</h1>
+
+    <h2 class="popup" style="text-align: center">Allow popups please</h2>
+
+    <a href="https://quiz-mia.netlify.app/" target="_blank"
+      >https://quiz-mia.netlify.app/</a
+    >
+    <div class="score-container"></div>
+    <div class="score-display"></div>
+    <div id="quiz-container"></div>
+
+    <div id="buttons-container" style="text-align: center; margin: 20px 0">
+      <button id="fasit-button" class="fasit-button">Vis fasit</button>
+      <button id="print-button" class="print-button">Skriv ut spørsmål</button>
     </div>
-    <script>
-    const correctUsername = "2222";
-    const correctPassword = "1111";
-    document.getElementById('loginForm').onsubmit = function(e) {
-        e.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        if (username === correctUsername && password === correctPassword) {
-            localStorage.setItem('quizLoggedIn', 'true');
-            window.location.href = "quiz.html";
-        } else {
-            document.getElementById('message').textContent = "Incorrect username or password.";
-        }
-    };
-</script>
-</body>
+
+    <div
+      id="signature"
+      style="
+        margin-top: 40px;
+        text-align: center;
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+        position: relative;
+        bottom: 0;
+      "
+    >
+      <a
+        href="https://miatexnes.com/"
+        style="text-decoration: none; color: #333"
+        >Mia Texnes</a
+      >
+    </div>
+  </body>
 </html>
