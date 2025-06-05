@@ -47,6 +47,49 @@ h2 {
     justify-content: space-between; /* Fordel spørsmålene jevnt */
 }
 
+/* Legg til disse stilene mot slutten av filen */
+
+#buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;  /* Avstand mellom knapper */
+    margin: 30px 0;
+  }
+
+  #signature {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    width: 100%;
+    clear: both;
+  }
+
+  .submit-button {
+    background: #438f5a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .submit-button:hover {
+    background: #357a47;
+  }
+
+ .popup {
+    font-size: medium;
+ }
+ 
+.fasit-button {
+  display: block;
+  margin: 10px auto 20px auto;
+  text-align: center;
+}
+
 /* Spørsmål-container */
 .question-container {
     flex: 0 1 calc(33.33% - 20px); /* Ta opp 1/3 av bredden minus gap */
@@ -346,6 +389,12 @@ button:hover {
     /* Fjern sideskift for små elementer */
     .score-display {
         display: none; /* Skjul poengsum ved utskrift */
+    }
+}
+
+@media (max-width: 768px) {
+    .question-container {
+        flex: 0 1 100%; /* Ta opp hele bredden på små skjermer */
     }
 }
 
