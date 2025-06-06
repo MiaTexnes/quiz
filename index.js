@@ -976,6 +976,16 @@ function shuffleArray(array) {
 // Shuffle the questions
 shuffleArray(questions);
 
+// Shuffle options for each question and update correctAnswer
+questions.forEach((q) => {
+  // Store the correct answer before shuffling
+  const correct = q.correctAnswer;
+  // Shuffle options
+  shuffleArray(q.options);
+  // Update correctAnswer to the new shuffled value
+  q.correctAnswer = q.options.find((opt) => opt === correct);
+});
+
 // Select the first 30 questions
 const selectedQuestions = questions.slice(0, 30);
 
