@@ -1,7 +1,9 @@
 // Fetch questions from Open Trivia Database API
 async function fetchQuestions() {
   try {
-    const response = await fetch('https://opentdb.com/api.php?amount=30&difficulty=medium&type=multiple');
+    const response = await fetch(
+      'https://opentdb.com/api.php?amount=50&difficulty=easy&type=multiple'
+    );
     const data = await response.json();
 
     if (data.response_code === 0) {
