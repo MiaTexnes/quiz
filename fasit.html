@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="no">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fasit</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Fasit</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Correct Answers</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Correct Answers</h1>
     <div id="fasit-container"></div>
     <script>
-        // Hent URL-parametrene
-        const urlParams = new URLSearchParams(window.location.search);
-        const data = urlParams.get('data');
+      // Hent URL-parametrene
+      const urlParams = new URLSearchParams(window.location.search);
+      const data = urlParams.get("data");
 
-        if (data) {
-            const fasitData = JSON.parse(decodeURIComponent(data));
-            const fasitContainer = document.getElementById('fasit-container');
-            fasitData.forEach(item => {
-                const questionElement = document.createElement('div');
-                questionElement.className = 'fasit-question';
-                questionElement.innerHTML = `
+      if (data) {
+        const fasitData = JSON.parse(decodeURIComponent(data));
+        const fasitContainer = document.getElementById("fasit-container");
+        fasitData.forEach((item) => {
+          const questionElement = document.createElement("div");
+          questionElement.className = "fasit-question";
+          questionElement.innerHTML = `
                     <strong>${item.number}. ${item.question}</strong><br>
                     Riktig svar: <span class="fasit-answer">${item.correctAnswer}</span>
                 `;
-                fasitContainer.appendChild(questionElement);
-            });
-        } else {
-            document.getElementById('fasit-container').textContent = 'Ingen fasit tilgjengelig.';
-        }
+          fasitContainer.appendChild(questionElement);
+        });
+      } else {
+        document.getElementById("fasit-container").textContent =
+          "Ingen fasit tilgjengelig.";
+      }
     </script>
-</body>
+  </body>
 </html>

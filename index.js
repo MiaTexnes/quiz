@@ -9,7 +9,7 @@ function shuffleArray(array) {
 }
 
 // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   // Display loading indicator
   const quizContainer = document.getElementById("quiz-container");
   quizContainer.innerHTML = '<div class="loading">Loading questions...</div>';
@@ -18,12 +18,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   const questions = await fetchQuestions();
 
   if (questions.length === 0) {
-    quizContainer.innerHTML = '<div class="error">Failed to load questions. Please try again later.</div>';
+    quizContainer.innerHTML =
+      '<div class="error">Failed to load questions. Please try again later.</div>';
     return;
   }
 
   // Clear loading indicator
-  quizContainer.innerHTML = '';
+  quizContainer.innerHTML = "";
 
   // Shuffle the questions
   shuffleArray(questions);
@@ -39,7 +40,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   // Select all questions (or limit to 30 if more)
-  const selectedQuestions = questions.length > 30 ? questions.slice(0, 30) : questions;
+  const selectedQuestions =
+    questions.length > 30 ? questions.slice(0, 30) : questions;
 
   // Display the questions on the webpage
   selectedQuestions.forEach((questionObj, index) => {
@@ -121,9 +123,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     validationMessage.className = "validation-message";
 
     // Reset any previously marked unanswered questions
-    document.querySelectorAll(".question-container.unanswered").forEach((container) => {
-      container.classList.remove("unanswered");
-    });
+    document
+      .querySelectorAll(".question-container.unanswered")
+      .forEach((container) => {
+        container.classList.remove("unanswered");
+      });
 
     // Check if all questions are answered
     const unansweredQuestions = [];
@@ -136,7 +140,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (!selectedOption) {
         unansweredQuestions.push(index + 1);
         // Mark the question container as unanswered
-        const questionContainer = document.querySelector(`.question-container[data-question-number="${index + 1}"]`);
+        const questionContainer = document.querySelector(
+          `.question-container[data-question-number="${index + 1}"]`
+        );
         if (questionContainer) {
           questionContainer.classList.add("unanswered");
         }
@@ -145,11 +151,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // If there are unanswered questions, show error message and stop
     if (unansweredQuestions.length > 0) {
-      validationMessage.textContent = `Please answer all questions before submitting. Missing answers for questions: ${unansweredQuestions.join(", ")}`;
+      validationMessage.textContent = `Please answer all questions before submitting. Missing answers for questions: ${unansweredQuestions.join(
+        ", "
+      )}`;
       validationMessage.className = "validation-message error";
 
       // Scroll to the first unanswered question
-      const firstUnanswered = document.querySelector(`.question-container.unanswered`);
+      const firstUnanswered = document.querySelector(
+        `.question-container.unanswered`
+      );
       if (firstUnanswered) {
         firstUnanswered.scrollIntoView({ behavior: "smooth" });
       }
@@ -164,7 +174,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         `input[name="question-${index}"]:checked`
       );
 
-      if (selectedOption && selectedOption.value === questionObj.correctAnswer) {
+      if (
+        selectedOption &&
+        selectedOption.value === questionObj.correctAnswer
+      ) {
         score++;
         // Highlight correct answer
         selectedOption.parentElement.classList.add("correct-answer");
@@ -186,10 +199,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Display score - Add it to the score-container element instead
     const scoreContainer = document.querySelector(".score-container");
-    scoreContainer.innerHTML = ''; // Clear any previous scores
+    scoreContainer.innerHTML = ""; // Clear any previous scores
 
     const scoreDisplay = document.createElement("div");
-    scoreDisplay.textContent = `Din poengsum: ${score} av ${selectedQuestions.length}`;
+    scoreDisplay.textContent = `Your Score: ${score} av ${selectedQuestions.length}`;
     scoreDisplay.className = "score-display";
 
     // Add score to the score container (at the bottom)
