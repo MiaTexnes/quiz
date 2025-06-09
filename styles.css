@@ -80,10 +80,10 @@ h2 {
     background: #357a47;
   }
 
- .popup {
+ .fetched-data {
     font-size: medium;
  }
- 
+
 .fasit-button {
   display: block;
   margin: 10px auto 20px auto;
