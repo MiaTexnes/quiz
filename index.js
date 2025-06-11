@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Select all questions (or limit to 30 if more)
   const selectedQuestions =
-    questions.length > 30 ? questions.slice(0, 30) : questions;
+    questions.length > 30 ? questions.slice(0, 15) : questions;
 
   // Display the questions on the webpage
   selectedQuestions.forEach((questionObj, index) => {
